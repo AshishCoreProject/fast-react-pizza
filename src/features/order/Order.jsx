@@ -1,6 +1,6 @@
 // Test ID: IIDSAT
 
-import { getMenu, getOrder } from "../../services/apiRestaurant";
+import { getOrder } from "../../services/apiRestaurant";
 import {
   calcMinutesLeft,
   formatCurrency,
