@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 
+// eslint-disable-next-line react/prop-types
 function Button({ children, disabled, to }) {
   const className = ` py-3 px-4 inline-block bg-yellow-400
     uppercase font-semibold
