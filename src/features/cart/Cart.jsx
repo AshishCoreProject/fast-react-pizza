@@ -1,24 +1,24 @@
-import LinkButton from "../../ui/LinkButton";
-import Button from "../../ui/Button";
+import LinkButton from '../../ui/LinkButton';
+import Button from '../../ui/Button';
 
 const fakeCart = [
   {
     pizzaId: 12,
-    name: "Mediterranean",
+    name: 'Mediterranean',
     quantity: 2,
     unitPrice: 16,
     totalPrice: 32,
   },
   {
     pizzaId: 6,
-    name: "Vegetale",
+    name: 'Vegetale',
     quantity: 1,
     unitPrice: 13,
     totalPrice: 13,
   },
   {
     pizzaId: 11,
-    name: "Spinach and Mushroom",
+    name: 'Spinach and Mushroom',
     quantity: 1,
     unitPrice: 15,
     totalPrice: 15,
@@ -35,7 +35,9 @@ function Cart() {
       <h2>Your cart, %NAME%</h2>
 
       <div>
-        <Button to="/order/new">Order pizzas</Button>
+        <Button to="/order/new" type="primary">
+          Order pizzas
+        </Button>
         <button>Clear cart</button>
       </div>
     </div>
