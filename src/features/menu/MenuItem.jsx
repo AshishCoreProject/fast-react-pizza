@@ -16,15 +16,19 @@ function MenuItem({ pizza }) {
         <p className="text-sm capitalize italic text-stone-500">
           {ingredients.join(', ')}
         </p>
-        <div className="mt-auto flex items-center">
+        <div className="mx-auto mt-auto flex items-center gap-96">
           {!soldOut ? (
-            <p className="text-sm">{formatCurrency(unitPrice)}</p>
+            <p className="transition: h-6 w-20 transform border-2  border-x-green-500/50 bg-yellow-100 text-center align-middle text-sm font-bold text-stone-700 hover:-translate-y-0.5 hover:bg-yellow-400">
+              {formatCurrency(unitPrice)}
+            </p>
           ) : (
             <p className="text-sm font-medium uppercase text-stone-500">
               Sold out
             </p>
           )}
-          <Button type="small">Add to cart </Button>
+          <Button on type="small">
+            Add to cart{' '}
+          </Button>
         </div>
       </div>
     </li>

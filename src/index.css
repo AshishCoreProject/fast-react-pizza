@@ -4,11 +4,11 @@
 
 @layer components {
   .input {
-    @apply rounded-full tracking-wide border
-     border-stone-200 px-4 md:py-3 font-normal 
-      transition-all duration-300 placeholder:text-stone-400 
-      focus:outline-none focus:ring focus:ring-yellow-400 w-full
-      text-stone-600 text-lg md:px-6;
+    @apply rounded-full border
+     border-stone-200 px-4 text-lg font-normal 
+      tracking-wide text-stone-600 transition-all 
+      duration-300 placeholder:text-stone-400 focus:outline-none focus:ring
+      focus:ring-yellow-400 md:px-6 md:py-3;
   }
 
   /* https://dev.to/afif/i-made-100-css-loaders-for-your-next-project-4eje */
