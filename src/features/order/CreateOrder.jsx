@@ -4,6 +4,7 @@ import { Form, useActionData, useNavigation } from 'react-router-dom';
 // eslint-disable-next-line no-unused-vars
 import { createOrder } from '../../services/apiRestaurant';
 import Button from '../../ui/Button';
+import { useSelector } from 'react-redux';
 
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
@@ -36,6 +37,8 @@ const fakeCart = [
 ];
 
 function CreateOrder() {
+  const username = useSelector((state) => state.user.username);
+
   const navigation = useNavigation();
   const isSubmitting = navigation.state === 'submitting';
 
@@ -56,6 +59,7 @@ function CreateOrder() {
               className="input w-full"
               type="text"
               name="customer"
+              defaultValue={username}
               required
             />
           </div>
@@ -133,10 +137,10 @@ export async function action({ request }) {
   if (Object.keys(errors).length > 0) return errors;
 
   //if everything is okay, create new order and redirect.
-  // const newOrder = await createOrder(order);
+  const newOrder = await createOrder(order);
 
-  // return redirect(`/order/${newOrder.id}`);
-  return null;
+  // eslint-disable-next-line no-undef
+  return redirect(`/order/${newOrder.id}`);
 }
 
 export default CreateOrder;
