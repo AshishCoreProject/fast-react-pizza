@@ -29,9 +29,10 @@ const fakeCart = [
 
 function Cart() {
   const username = useSelector((state) => state.user.username);
-
-  const cart = fakeCart;
+  const item = useSelector((state) => state.cart.cartList);
+  const cart = fakeCart.push(item);
   console.log(cart);
+
   return (
     <div className="px-4 py-3 ">
       <LinkButton to="/menu">back to menu</LinkButton>
