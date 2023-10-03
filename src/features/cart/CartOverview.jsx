@@ -1,11 +1,18 @@
-import { Link } from "react-router-dom";
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { getTotalCartPrice, getTotalCartQuantity } from './cartSlice';
 
 function CartOverview() {
+  const totalCartQuantity = useSelector(getTotalCartQuantity);
+  const totalCartPrice = useSelector(getTotalCartPrice);
+
+  if (!totalCartQuantity) return null;
+
   return (
-    <div className="bg-stone-800 p-4 md:text-base text-stone-200 sm:px-6 uppercase flex items-center justify-between">
-      <p className="space-x-4 text-stone-300 font-semibold text-sm sm:px-6">
-        <span>23 pizzas</span>
-        <span>$23.45</span>
+    <div className="flex items-center justify-between bg-stone-800 p-4 uppercase text-stone-200 sm:px-6 md:text-base">
+      <p className="space-x-4 text-sm font-semibold text-stone-300 sm:px-6">
+        <span>{totalCartQuantity}</span>
+        <span>${totalCartPrice}</span>
       </p>
       <Link to="/cart">Open cart &rarr;</Link>
     </div>

@@ -2,15 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   //   cart: [],
-  cart: [
-    {
-      pizzaId: 12,
-      name: 'Mediterrean',
-      quantity: 2,
-      unitPrice: 16,
-      totalPrice: 32,
-    },
-  ],
+  cart: [],
 };
 const cartSlice = createSlice({
   name: 'cart',
@@ -51,3 +43,11 @@ export const {
 } = cartSlice.actions;
 
 export default cartSlice.reducer;
+
+//This is redux selector function. These function start with get keyword .
+//These might cause a performance issue we can also use reselect library to optimize these types of function.
+export const getTotalCartQuantity = (state) =>
+  state.cart.cart.reduce((sum, item) => sum + item.quantity, 0);
+
+export const getTotalCartPrice = (state) =>
+  state.cart.cart.reduce((sum, item) => sum + item.totalPrice, 0);
