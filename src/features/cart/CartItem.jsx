@@ -1,11 +1,16 @@
+import { useSelector } from 'react-redux';
 import { formatCurrency } from '../../utils/helpers';
 import DeleteItem from './DeleteItem';
+import UpdateItemQuantity from './UpdateItemQuantity';
+import { getCurrentQuantityById } from './cartSlice';
 
 // eslint-disable-next-line react/prop-types
 function CartItem({ item }) {
   // eslint-disable-next-line react/prop-types
   const { pizzaId, name, quantity, totalPrice } = item;
   console.log(item);
+
+  const currentQuantity = useSelector(getCurrentQuantityById(pizzaId));
 
   return (
     <li className="sm:fles py-3 sm:items-center sm:justify-between">
@@ -17,6 +22,10 @@ function CartItem({ item }) {
         {/* <Button onClick={handleDeleteToCart} type="small">
           Delete
         </Button> */}
+        <UpdateItemQuantity
+          pizzaId={pizzaId}
+          currentQuantity={currentQuantity}
+        />
         <DeleteItem pizzaId={pizzaId} />
       </div>
     </li>

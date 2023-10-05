@@ -15,6 +15,9 @@ export default {
       height: {
         screen: '100dvh',
       },
+      ring: {
+        ron: 'ring-0',
+      },
     },
   },
   plugins: [],
