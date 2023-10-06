@@ -88,7 +88,7 @@ function Order() {
         </div>
       </div>
 
-      <div className="flex flex-wrap items-center justify-between gap-2 bg-stone-200 px-6 py-5">
+      <div className="flex flex-wrap items-center justify-around gap-2 bg-stone-200 px-6 py-6">
         <p className="font-medium">
           {deliveryIn >= 0
             ? `Only ${calcMinutesLeft(estimatedDelivery)} minutes left 😃`
@@ -99,7 +99,7 @@ function Order() {
         </p>
       </div>
 
-      <ul className="dive-stone-200 divide-y border-t">
+      <ul className="dive-stone-200  divide-y border-t px-4 py-4 ">
         {cart.map((item) => (
           <OrderItem
             isLoadingIngredients={fetcher.state === 'loading'}
