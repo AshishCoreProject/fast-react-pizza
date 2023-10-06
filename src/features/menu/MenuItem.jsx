@@ -23,7 +23,7 @@ function MenuItem({ pizza }) {
   }
 
   return (
-    <li className=" w-86 gap-4 overflow-hidden overflow-y-scroll py-2">
+    <li className=" w-86 gap-4 overflow-hidden py-2">
       <img
         src={imageUrl}
         alt={name}
