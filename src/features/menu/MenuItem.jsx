@@ -34,29 +34,36 @@ function MenuItem({ pizza }) {
         <p className="text-sm capitalize italic text-stone-500">
           {ingredients.join(', ')}
         </p>
-        <div className="mx-auto mt-auto flex w-[750px] items-center gap-96">
+        <div className="mx-auto mt-auto flex w-[750px] sm:items-center  sm:gap-96">
           {!soldOut ? (
-            <p className="transition: w-18 h-6 transform border-2  border-x-green-500/50 bg-yellow-100 text-center align-middle text-sm font-bold text-stone-700 hover:-translate-y-0.5 hover:bg-yellow-400">
+            <p className="transition: w-18 mx-2 mt-[12px] h-6 transform border-2  border-x-green-500/50 bg-yellow-100 text-center align-middle text-sm font-bold text-stone-700 hover:-translate-y-0.5 hover:bg-yellow-400">
               {formatCurrency(unitPrice)}
             </p>
           ) : (
-            <p className=" ml-96 text-sm font-medium uppercase text-stone-500">
+            <p className="text-sm font-medium uppercase text-stone-500 sm:ml-96">
               Sold out
             </p>
           )}
           {isInCart && (
-            <div className="relative right-[138px] flex items-center gap-3 sm:gap-8">
-              <UpdateItemQuantity
-                pizzaId={id}
-                currentQuantity={currentQuantity}
-              />
-              <DeleteItem pizzaId={id} />
+            <div className="relative right-[1px] flex items-center sm:gap-8">
+              <div className="absolute left-[150px]  mx-2 mt-2 ">
+                {/* sm:static */}
+                <UpdateItemQuantity
+                  pizzaId={id}
+                  currentQuantity={currentQuantity}
+                />
+              </div>
+              <div className="mx-1">
+                <DeleteItem pizzaId={id} />
+              </div>
             </div>
           )}
           {!soldOut && !isInCart && (
-            <Button onClick={handleToCart} type="small">
-              Add to cart
-            </Button>
+            <div className="mx-4">
+              <Button onClick={handleToCart} type="small">
+                Add to cart
+              </Button>
+            </div>
           )}
         </div>
       </div>

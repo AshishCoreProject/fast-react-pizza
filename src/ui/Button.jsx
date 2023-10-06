@@ -27,7 +27,7 @@ function Button({ children, disabled, to, type, onClick }) {
 
     delete:
       deleteSpecial +
-      ` py-2 md:px-5 md:py-2.5 border-4 border-red-400 text-xs w-36 focus:outline-none focus:ring focus:ring-red-400 focus:bg-red-300 focus:ring-offset-2 bg-gradient-to-l from-red-100 to-red-400 hover:bg-gradient-to-r from-red-100 to-red-400`,
+      ` py-2 md:px-5 md:py-2.5 border-4 border-red-400 text-xs w-36  focus:outline-none focus:ring focus:ring-red-400 focus:bg-red-300 focus:ring-offset-2 bg-gradient-to-l from-red-100 to-red-400 hover:bg-gradient-to-r from-red-100 to-red-400`,
 
     secondary: ` inline-block border-2 border-stone-300 
     uppercase font-semibold hover: text-stone-800
