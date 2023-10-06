@@ -99,7 +99,7 @@ function Order() {
         </p>
       </div>
 
-      <ul className="dive-stone-200  divide-y border-t px-4 py-4 ">
+      <ul className="dive-stone-200  divide-y border-t px-8 py-4 ">
         {cart.map((item) => (
           <OrderItem
             isLoadingIngredients={fetcher.state === 'loading'}
