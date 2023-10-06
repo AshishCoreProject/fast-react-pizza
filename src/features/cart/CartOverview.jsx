@@ -14,7 +14,7 @@ function CartOverview() {
         <span>{totalCartQuantity} PIZZAS</span>
         <span> ₹{Number(totalCartPrice)}</span>
       </p>
-      <span className=" mr-4 rounded-lg border border-yellow-300 text-xl outline-2 ring-4 hover:ring-offset-2 sm:text-lg">
+      <span className=" outline- mr-4 rounded-lg border border-yellow-300 text-xl ring-4 hover:ring-offset-2 sm:text-lg">
         <Link to="/cart">Open cart &rarr;</Link>
       </span>
     </div>
